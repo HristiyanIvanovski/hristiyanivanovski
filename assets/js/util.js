@@ -95,11 +95,9 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				// (strings are treated strictly as selectors, never as HTML).
+				// (selectors or elements only, never parsed as HTML).
 				if (!(config.target instanceof jQuery))
-					config.target = (typeof config.target === 'string')
-						? $(document).find(config.target)
-						: $(config.target);
+					config.target = $(document).find(config.target);
 
 		// Panel.
 
